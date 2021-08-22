@@ -17,7 +17,7 @@ echo "<script>window.location.href ='contact.php'</script>";
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Isosceles | Contact us</title>
+		<title>ZenCare | Contact us</title>
 		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
 		<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
 	</head>
@@ -29,7 +29,7 @@ echo "<script>window.location.href ='contact.php'</script>";
 				<div class="wrap">
 				<!--start-logo-->
 				<div class="logo">
-		<a href="index.html" style="font-size: 30px;">Isosceles</a> 
+		<a href="index.html" style="font-size: 30px;">ZenCare</a> 
 				</div>
 				<!--end-logo-->
 				<!--start-top-nav-->
@@ -58,7 +58,7 @@ echo "<script>window.location.href ='contact.php'</script>";
 						   		<p>Bangladesh</p>
 				   		<p>Phone:+88 01650280181</p>
 				   		<p>Fax:  000 00 00 0</p>
-				 	 	<p>Email: <span>isosceles@gmail.com</span></p>
+				 	 	<p>Email: <span>zencare@gmail.com</span></p>
 				   	
 				   </div>
 				</div>				
