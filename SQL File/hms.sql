@@ -1,12 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
+--
 -- Host: 127.0.0.1
--- Server version: 10.3.15-MariaDB
--- PHP Version: 7.2.19
+-- Generation Time: Sep 04, 2021 at 08:31 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -38,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `updationDate`) VALUES
-(1, 'admin', 'Test@12345', '28-09-2019 11:42:05 AM');
+(1, 'admin', 'Test@12345', '05-09-2021 11:42:05 AM');
 
 -- --------------------------------------------------------
 
@@ -60,15 +61,6 @@ CREATE TABLE `appointment` (
   `updationDate` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `appointment`
---
-
-INSERT INTO `appointment` (`id`, `doctorSpecialization`, `doctorId`, `userId`, `consultancyFees`, `appointmentDate`, `appointmentTime`, `postingDate`, `userStatus`, `doctorStatus`, `updationDate`) VALUES
-(1, 'Dentist', 1, 1, 500, '2019-09-01', '09:25 PM', '2019-09-01 00:29:02', 1, 0, ''),
-(2, 'Medicine', 2, 2, 700, '2019-09-01', '14:10 PM', '2019-09-01 08:02:58', 0, 1, ''),
-(3, 'Cardiologist', 3, 3, 600, '2019-08-29', '9:15 PM', '2019-09-01 18:31:28', 1, 1, '');
-
 -- --------------------------------------------------------
 
 --
@@ -88,16 +80,6 @@ CREATE TABLE `doctors` (
   `updationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `doctors`
---
-
-INSERT INTO `doctors` (`id`, `specilization`, `doctorName`, `address`, `docFees`, `contactno`, `docEmail`, `password`, `creationDate`, `updationDate`) VALUES
-(1, 'Dentist', 'Seragis Salekin', 'Nadda,Dhaka', '500', 01788176519, 'salekin@gmail.com', '1234567', '2019-09-01 06:25:37', '2019-09-03 12:11:05'),
-(2, 'Medicine', 'Fuadul Islam', 'Bashundhara R/A', '600', 01735975099, 'fuad@gmail.com', '1234567', '2019-09-01 06:51:51', '0000-00-00 00:00:00'),
-(3, 'Cardiologiast', 'Farzia Chowdhury', 'Farmgate', '700', 01733711231, 'farzia@gmail.com', '1234567', '2019-09-01 07:43:35', '0000-00-00 00:00:00');
-
-
 -- --------------------------------------------------------
 
 --
@@ -113,14 +95,6 @@ CREATE TABLE `doctorslog` (
   `logout` varchar(255) DEFAULT NULL,
   `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `doctorslog`
---
-
-INSERT INTO `doctorslog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
-(1, 1, 'salekin@gmail.com', 0x30000000000000000000000000000000, '2019-09-01 05:53:31', '', 1);
-
 
 -- --------------------------------------------------------
 
@@ -140,9 +114,10 @@ CREATE TABLE `doctorspecilization` (
 --
 
 INSERT INTO `doctorspecilization` (`id`, `specilization`, `creationDate`, `updationDate`) VALUES
-(1, 'Dentist', '2019-09-01 06:37:25', '0000-00-00 00:00:00'),
-(2, 'Medicine', '2019-09-01 06:38:12', '0000-00-00 00:00:00'),
-(3, 'Cardiologist', '2019-09-01 06:38:48', '0000-00-00 00:00:00');
+(1, 'Dentist', '2021-09-05 06:37:25', '2021-09-04 18:14:07'),
+(2, 'Medicine', '2021-09-05 06:38:12', '2021-09-04 18:14:29'),
+(3, 'Cardiologist', '2021-09-05 06:38:48', '2021-09-04 18:14:47');
+
 -- --------------------------------------------------------
 
 --
@@ -161,12 +136,6 @@ CREATE TABLE `tblcontactus` (
   `IsRead` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tblcontactus`
---
-
-INSERT INTO `tblcontactus` (`id`, `fullname`, `email`, `contactno`, `message`, `PostingDate`, `AdminRemark`, `LastupdationDate`, `IsRead`) VALUES
-(1, 'Salekin', 's@gmail.com', 01751264433, ' This is sample text for the test.', '2019-08-29 19:03:08', 'Test for Admin Remark', '2019-08-30 12:55:23', 1);
 -- --------------------------------------------------------
 
 --
@@ -182,13 +151,6 @@ CREATE TABLE `userlog` (
   `logout` varchar(255) DEFAULT NULL,
   `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `userlog`
---
-
-INSERT INTO `userlog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
-(1, 1, 'Masud', 0x3a3a3100000000000000000000000000, '2019-08-30 07:02:28', '', 1);
 
 -- --------------------------------------------------------
 
@@ -209,11 +171,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `fullName`, `address`, `city`, `gender`, `email`, `password`, `regDate`, `updationDate`) VALUES
-(1, 'Masud', 'Mirpur', 'Dhaka', 'Males', 'masud@gmail.com', '1234567', '2019-08-30 07:03:09', '2019-08-30 11:59:05');
 -- Indexes for dumped tables
 --
 
@@ -279,19 +236,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `doctorslog`
 --
 ALTER TABLE `doctorslog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `doctorspecilization`
@@ -303,19 +260,19 @@ ALTER TABLE `doctorspecilization`
 -- AUTO_INCREMENT for table `tblcontactus`
 --
 ALTER TABLE `tblcontactus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `userlog`
 --
 ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
